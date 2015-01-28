@@ -1,1 +1,10 @@
 // Your application styles go here
+form{
+  .form-error{
+    color: red;
+    padding: 5px 15px 10px;
+  }
+  label.item.has-error {
+    border-bottom: 2px solid red;
+  }
+}

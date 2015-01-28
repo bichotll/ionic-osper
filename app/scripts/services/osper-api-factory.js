@@ -8,7 +8,7 @@
  * Api in the TestOsperIonic.
  */
 angular.module('TestOsperIonic')
-  .factory('osperApiFactory', function () {
+  .factory('osperApiFactory', function ($rootScope) {
     var dataFactory = {};
 
     var sessionStatus = false;
@@ -19,10 +19,22 @@ angular.module('TestOsperIonic')
 
     dataFactory.login = function () {
       sessionStatus = true;
+      $rootScope.$emit('login', dataFactory.getUserData());
     };
 
     dataFactory.logout = function () {
       sessionStatus = false;
+    };
+
+    dataFactory.getUserData = function () {
+      return {
+        'name': 'Samy',
+        'balance': 21.43,
+        'allowance': 'On',
+        'card': {
+          'status': 'Unlocked'
+        }
+      };
     };
 
     return dataFactory;

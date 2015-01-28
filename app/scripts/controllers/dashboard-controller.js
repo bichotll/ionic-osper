@@ -1,6 +1,6 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('HomeCtrl', function () {
+  .controller('DashboardCtrl', function () {
 
   });

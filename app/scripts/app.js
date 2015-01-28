@@ -39,12 +39,20 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
           }
         }
       })
-      .state('app.home', {
-        url: '/home',
+      .state('app.logout', {
+        url: '/logout',
         views: {
           'menuContent': {
-            templateUrl: 'templates/home.html',
-            controller: 'HomeCtrl'
+            controller: 'LogoutCtrl'
+          }
+        }
+      })
+      .state('app.dashboard', {
+        url: '/dashboard',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/dashboard.html',
+            controller: 'DashboardCtrl'
           }
         }
       })
