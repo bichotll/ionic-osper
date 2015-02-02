@@ -1,7 +1,7 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('DashboardCtrl', function ($scope, $ionicLoading, $timeout, osperApiFactory) {
+  .controller('CardBalanceCtrl', function ($scope, $ionicLoading, $timeout, osperApiFactory) {
     $ionicLoading.show();
 
     /*
@@ -12,8 +12,7 @@ angular.module('TestOsperIonic')
      */
     $timeout(function () {
       $scope.user = osperApiFactory.getUserData();
-      $scope.lastLogin = osperApiFactory.lastLogin();
-      $scope.nextAllowanceInfo = osperApiFactory.nextAllowanceInfo();
+      $scope.lastMovements = osperApiFactory.lastMovements();
       $ionicLoading.hide();
     }, 1000);
   });

@@ -56,21 +56,12 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
           }
         }
       })
-      .state('app.playlists', {
-        url: '/playlists',
+      .state('app.cardBalance', {
+        url: '/card/balance',
         views: {
           'menuContent': {
-            templateUrl: 'templates/playlists.html',
-            controller: 'PlaylistsCtrl'
-          }
-        }
-      })
-      .state('app.single', {
-        url: '/playlists/:playlistId',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+            templateUrl: 'templates/card-balance.html',
+            controller: 'CardBalanceCtrl'
           }
         }
       });

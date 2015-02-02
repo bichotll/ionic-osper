@@ -1,8 +1,40 @@
-<ion-view title="Dashboard">
+<ion-view title="Osper Dashboard">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
-    <div>card!</div>
+  <div class="bar bar-subheader bar-energized">
+    <h2 class="title">Hi {{ user.name }}!</h2>
+  </div>
+  <ion-content class="has-header has-subheader">
+    <ion-list>
+      <ion-item nav-clear class="item-icon-left item-icon-right" href="#/app/card/balance">
+        <i class="icon ion-card"></i>
+
+        <h2 class="strong">{{ user.balance }}</h2>
+
+        <p>Osper Card balance</p>
+        <i class="icon ion-arrow-right-c"></i>
+      </ion-item>
+      <ion-item nav-clear class="item-icon-left item-icon-right" href="#">
+        <i class="icon ion-card balanced"></i>
+
+        <h2 class="balanced strong">{{ nextAllowanceInfo.msg }}</h2>
+
+        <p>Next Osper Allowance</p>
+        <i class="icon ion-arrow-right-c"></i>
+      </ion-item>
+      <ion-item nav-clear class="item-icon-left item-icon-right" href="#">
+        <i class="icon ion-card balanced"></i>
+
+        <h2 class="balanced strong">Online Spending On</h2>
+
+        <p>Online status</p>
+        <i class="icon ion-arrow-right-c"></i>
+      </ion-item>
+    </ion-list>
+
+    <div class="text-center padding">
+      <p>Last login: {{ lastLogin.msg }}</p>
+    </div>
   </ion-content>
 </ion-view>

@@ -1,4 +1,18 @@
 // Your application styles go here
+
+//helpers
+.text-center{
+  text-align: center;
+}
+.strong{
+  font-weight: bold;
+}
+.size-20{
+  font-size: 18px;
+}
+
+//app style
+
 form{
   .form-error{
     color: red;
@@ -6,5 +20,13 @@ form{
   }
   label.item.has-error {
     border-bottom: 2px solid red;
+  }
+}
+
+.list{
+  .item{
+    .item-right{
+      float: right;
+    }
   }
 }
