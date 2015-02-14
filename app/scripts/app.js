@@ -69,6 +69,36 @@ angular.module('TestOsperIonic', ['ionic', 'googlechart', 'config'])
             controller: 'CardBalanceCtrl'
           }
         }
+      })
+      .state('app.statistics', {
+        url: '/statistics',
+        cache: false,
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/statistics.html',
+            controller: 'StatisticsCtrl'
+          }
+        }
+      })
+      .state('app.objectives', {
+        url: '/objectives',
+        cache: false,
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/objectives.html',
+            controller: 'ObjectivesCtrl'
+          }
+        }
+      })
+      .state('app.objectiveDetails', {
+        url: '/objective-details',
+        cache: false,
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/objective-details.html',
+            controller: 'ObjectiveDetailsCtrl'
+          }
+        }
       });
 
     // if none of the above states are matched, use this as the fallback

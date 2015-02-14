@@ -1,0 +1,24 @@
+<ion-view title="Statistics" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <div class="padding">
+      <ion-list>
+        <ion-item class="item-divider">Current objectives</ion-item>
+        <ion-item ng-repeat="objective in objectives" href="#/app/objective-details">
+          <span class="item-note">
+            £{{ objective.balance - objective.objective }} to go
+          </span>
+          <h2 class="strong">{{ objective.name }}</h2>
+          <p>{{ objective.miniDescription }}</p>
+        </ion-item>
+        <ion-item class="item-divider">Recent achieved</ion-item>
+        <ion-item class="text-center" >none</ion-item>
+      </ion-list>
+      <ion-list></ion-list>
+      <button class="button button-stable button-block">Create an objective</button>
+      <button class="button button-stable button-block">History objectives</button>
+    </div>
+  </ion-content>
+</ion-view>
