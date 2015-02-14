@@ -1,7 +1,7 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('LoginCtrl', function ($scope, $timeout, $state, $ionicHistory, $ionicLoading, $ionicSideMenuDelegate, osperApiFactory) {
+  .controller('LoginCtrl', function ($scope, $timeout, $state, $ionicHistory, $ionicLoading, $ionicSideMenuDelegate, $ionicModal, osperApiFactory) {
 
     var redirectDashboard = function(){
       $ionicHistory.nextViewOptions({

@@ -8,7 +8,7 @@ angular.module('TestOsperIonic')
       $ionicHistory.clearHistory();
 
       $ionicHistory.nextViewOptions({
-        disableAnimate: true,
+        disableAnimate: false,
         disableBack: true
       });
 

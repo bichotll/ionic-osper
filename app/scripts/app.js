@@ -43,6 +43,7 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
       })
       .state('app.logout', {
         url: '/logout',
+        cache: false,
         views: {
           'menuContent': {
             controller: 'LogoutCtrl'
