@@ -1,9 +1,9 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $rootScope, osperApiFactory, $ionicViewService) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $rootScope, osperApiFactory, $ionicHistory) {
     if (!osperApiFactory.getSessionStatus()) {
-      $ionicViewService.nextViewOptions({
+      $ionicHistory.nextViewOptions({
         disableAnimate: true,
         disableBack: true
       });

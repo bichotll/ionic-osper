@@ -10,10 +10,10 @@
       </div>
     </div>
 
-    <ion-list ng-repeat="movement in lastMovements.movements" >
-      <ion-item nav-clear class="item-icon-left item-icon-right" href="#/app/card/balance">
-        <span class="item-right size-20 strong padding-top assertive">
-            £{{ movement.movement }}
+    <ion-list>
+      <ion-item  ng-repeat="movement in lastMovements.movements" >
+        <span class="item-right size-20 strong padding-top" ng-class="{assertive: movement.movement < 0}">
+            {{ movement.movement | customNegativeCurrency : '£' }}
         </span>
         <h2 class="strong">{{ movement.concept }}</h2>
         <p>{{ movement.when }}</p>

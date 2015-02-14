@@ -1,13 +1,13 @@
-<ion-view title="Login">
+<ion-view title="Login" hide-back-button="true">
   <ion-content class="has-header">
-    <form name="form" novalidate ng-submit="doLogin(form)">
+    <form name="loginForm" novalidate ng-submit="doLogin(loginForm)">
       <div class="list">
-        <label class="item item-input" ng-class="{ 'has-error' : form.name.$dirty && form.name.$invalid}">
+        <label class="item item-input" ng-class="{ 'has-error' : loginForm.name.$touched && loginForm.name.$invalid}">
           <span class="input-label">Username</span>
           <input type="text" ng-model="loginData.username" name="name" required="">
         </label>
-        <div ng-show="form.name.$dirty && form.name.$invalid">
-          <div class="form-error" ng-show="form.name.$error.required">Please provide your username</div>
+        <div ng-show="loginForm.name.$submitted && loginForm.name.$touched">
+          <div class="loginForm-error" ng-show="loginForm.name.$error.required">Please provide your username</div>
         </div>
         <label class="item item-input">
           <span class="input-label">Password</span>

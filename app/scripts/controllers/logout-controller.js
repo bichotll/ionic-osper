@@ -1,11 +1,11 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('LogoutCtrl', function ($scope, $timeout, $state, osperApiFactory, $ionicViewService) {
+  .controller('LogoutCtrl', function ($scope, $timeout, $state, osperApiFactory, $ionicHistory) {
 
       osperApiFactory.logout();
 
-      $ionicViewService.nextViewOptions({
+      $ionicHistory.nextViewOptions({
         disableAnimate: true,
         disableBack: true
       });

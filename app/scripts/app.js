@@ -26,12 +26,14 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
     $stateProvider
       .state('app', {
         url: '/app',
+        cache: false,
         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
       .state('app.login', {
         url: '/login',
+        cache: false,
         views: {
           'menuContent': {
             templateUrl: 'templates/login.html',
@@ -49,6 +51,7 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
       })
       .state('app.dashboard', {
         url: '/dashboard',
+        cache: false,
         views: {
           'menuContent': {
             templateUrl: 'templates/dashboard.html',
@@ -58,6 +61,7 @@ angular.module('TestOsperIonic', ['ionic', 'config'])
       })
       .state('app.cardBalance', {
         url: '/card/balance',
+        cache: false,
         views: {
           'menuContent': {
             templateUrl: 'templates/card-balance.html',

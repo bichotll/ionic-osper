@@ -1,15 +1,29 @@
 'use strict';
 angular.module('TestOsperIonic')
 
-  .controller('LoginCtrl', function ($scope, $timeout, $state, $ionicViewService, $ionicLoading, osperApiFactory) {
-    if (osperApiFactory.getSessionStatus()){
-      $ionicViewService.nextViewOptions({
+  .controller('LoginCtrl', function ($scope, $timeout, $state, $ionicHistory, $ionicLoading, $ionicSideMenuDelegate, osperApiFactory) {
+
+    var redirectDashboard = function(){
+      $ionicHistory.nextViewOptions({
         disableAnimate: true,
-        disableBack: true
+        disableBack: true,
+        historyRoot: true
       });
 
+      $ionicSideMenuDelegate.canDragContent(true);
+
       $state.go('app.dashboard');
-    }
+    };
+
+    var init = function(){
+      $ionicSideMenuDelegate.canDragContent(false);
+
+      if (osperApiFactory.getSessionStatus()){
+        redirectDashboard();
+      }
+    };
+
+    init();
 
     $scope.reset = function(form) {
       if (form) {
@@ -31,14 +45,9 @@ angular.module('TestOsperIonic')
       $timeout(function () {
         osperApiFactory.login();
 
-        $ionicViewService.nextViewOptions({
-          disableAnimate: false,
-          disableBack: true
-        });
-
         $ionicLoading.hide();
 
-        $state.go('app.dashboard');
+        redirectDashboard();
       }, 1000);
     };
   });
